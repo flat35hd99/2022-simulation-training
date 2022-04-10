@@ -1,1 +1,6 @@
+# Python
 .venv
+
+# C++
+*.dat
+*.out
