@@ -2,5 +2,10 @@
 .venv
 
 # C++
-*.dat
 *.out
+
+# Output
+*.dat
+*.csv
+*.png
+*.pdf
