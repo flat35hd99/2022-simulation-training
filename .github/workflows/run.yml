@@ -26,6 +26,8 @@ jobs:
           for f in $(find . -name makefile);do
             make -j2 -C $(dirname $f)
           done
+          rm .gitignore
+          rm -rf .git
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
