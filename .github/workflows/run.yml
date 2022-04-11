@@ -15,7 +15,7 @@ jobs:
       - name: Build all
         run: |
           for f in $(find . -name makefile);do
-            make -f $f -j2
+            make -j2 -C $(dirname $f)
           done
 
       - name: Deploy
