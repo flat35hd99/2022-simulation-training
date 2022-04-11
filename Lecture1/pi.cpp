@@ -3,7 +3,8 @@
 #include <math.h> // for sin(),cos(), etc                                                                                                                                   
 #include <iostream>// for cout, etc                                                                                                                                         
 #include <fstream> // for ifstream/ofstream                                                                                                                                 
-#include <time.h>// for time(NULL), etc                                                                                                                                     
+#include <time.h>// for time(NULL), etc    
+#include <iomanip>                                                                                                                                 
 using namespace std;
 int main(void){
   int i, count = 0, max = 1e+5;
@@ -22,9 +23,9 @@ int main(void){
       file << x <<" "<<y <<endl;
     }
   }
-    pi = (double)count / max * 4;
-    printf("%.20f\n",pi); //by C, %.20f -- Displaying with 20 decimal precision                                                                                             
-    cout<< std::setprecision(21)  <<  pi  << endl; // by C++                                                                                                                
-    //std::cout << std::setprecision(21)  <<  pi  << endl; // without "using namespace std;"                                                                                
-    return 0;
+  pi = (double)count / max * 4;
+  printf("%.20f\n",pi); //by C, %.20f -- Displaying with 20 decimal precision                                                                                             
+  cout<< std::setprecision(21)  <<  pi  << endl; // by C++                                                                                                                
+  //std::cout << std::setprecision(21)  <<  pi  << endl; // without "using namespace std;"                                                                                
+  return 0;
 }

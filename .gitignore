@@ -1,0 +1,11 @@
+# Python
+.venv
+
+# C++
+*.out
+
+# Output
+*.dat
+*.csv
+*.png
+*.pdf
