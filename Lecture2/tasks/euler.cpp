@@ -5,9 +5,9 @@
 
 int main(int argc, char const *argv[]) {
   double v = 10;
-  double dt = atof(argv[1]);
-  double range = 1e4;
-  int steps = (int)range / dt;
+  const double dt = atof(argv[1]);
+  const double range = 1e4;
+  const int steps = (int)range / dt;
 
   constexpr double epsilon = std::numeric_limits<double>::epsilon();
 
