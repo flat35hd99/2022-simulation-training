@@ -4,12 +4,10 @@
 #include <limits>
 
 int main(int argc, char const *argv[]) {
-  double v, dt, range;
-  int i, steps, observe_span;
-  v = 10;
-  dt = atof(argv[1]);
-  range = 1e4;
-  steps = (int)range / dt;
+  double v = 10;
+  double dt = atof(argv[1]);
+  double range = 1e4;
+  int steps = (int)range / dt;
 
   constexpr double epsilon = std::numeric_limits<double>::epsilon();
 
