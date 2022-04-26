@@ -16,7 +16,7 @@ a.out: $(OBJ)
 	$(CC) $(CPPFLAGS) $(LDFLAGS) -o $(TARGET) $(OBJ)
 
 .cpp.o:
-	  $(CC) $(CPPFLAGS) -c $< 
+	  $(CC) $(CPPFLAGS) -c $<
 
 dep:
 	  g++  -std=gnu++11 -MM -MG $(SRC) >makefile.depend

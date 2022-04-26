@@ -1,3 +1,5 @@
+#pragma once
+
 /* Period parameters */
 #define MT_N 624
 #define MT_M 397
@@ -7,11 +9,12 @@
 
 class MT {
  private:
-  unsigned long mt[MT_N];
+  unsigned long int mt[MT_N];
   int mti = MT_N + 1;
 
  public:
-  MT(unsigned long s);
-  unsigned long genrand_int32(void);
+  MT();
+  MT(unsigned long int s);
+  unsigned long int genrand_int32(void);
   double genrand_real1(void);
 };

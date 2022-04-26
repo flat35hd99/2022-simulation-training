@@ -4,9 +4,11 @@
 # C++
 *.out
 *.o
+core*
 
 # Output
 *.dat
 *.csv
 *.png
 *.pdf
+*.txt

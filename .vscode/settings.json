@@ -6,5 +6,6 @@
         "limits": "cpp",
         "algorithm": "cpp"
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
 }

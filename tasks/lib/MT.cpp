@@ -1,7 +1,22 @@
 #include "MT.hpp"
 
+/* initializes mt[MT_N] with 0 */
+MT::MT() {
+  unsigned long int s = 1;
+  mt[0] = s & 0xffffffffUL;
+  for (mti = 1; mti < MT_N; mti++) {
+    mt[mti] = (1812433253UL * (mt[mti - 1] ^ (mt[mti - 1] >> 30)) + mti);
+    /* See Knuth TAOCP Vol2. 3rd Ed. P.106 for multiplier. */
+    /* In the previous versions, MSBs of the seed affect   */
+    /* only MSBs of the array mt[].                        */
+    /* 2002/01/09 modified by Makoto Matsumoto             */
+    mt[mti] &= 0xffffffffUL;
+    /* for >32 bit machines */
+  }
+}
+
 /* initializes mt[MT_N] with a seed */
-MT::MT(unsigned long s) {
+MT::MT(unsigned long int s) {
   mt[0] = s & 0xffffffffUL;
   for (mti = 1; mti < MT_N; mti++) {
     mt[mti] = (1812433253UL * (mt[mti - 1] ^ (mt[mti - 1] >> 30)) + mti);
@@ -48,6 +63,7 @@ unsigned long MT::genrand_int32(void) {
   return y;
 }
 
+/* generates a random number on [0,1]-real-interval */
 double MT::genrand_real1(void) {
   return genrand_int32() * (1.0 / 4294967295.0);
   /* divided by 2^32-1 */
