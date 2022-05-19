@@ -54,3 +54,7 @@ REDHAT_BUGZILLA_PRODUCT_VERSION=7.7
 REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
 REDHAT_SUPPORT_PRODUCT_VERSION="7.7"
 ```
+
+## メモ
+
+もともとのコードは、周期境界条件の中に戻す処理を、プリサンプリングの段階ではやっていなかった。(`p_boundary()`の呼び出しがない)そのため、本計算で`floor()`を`if`に取り替えて実装すると、箱の長さの半分の2倍より外にある粒子を箱の中に戻すことができず、バグを生んでしまう。注意が必要（一敗）
