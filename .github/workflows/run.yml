@@ -12,11 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Python and cache dependencies
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
       - name: Build all
         run: |
           for f in $(find . -name makefile);do
-            make -f $f -j2
+            make -j2 -C $(dirname $f)
           done
+          rm .gitignore
+          rm -rf .git
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
